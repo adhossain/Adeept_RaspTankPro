@@ -12,7 +12,7 @@ import Adafruit_PCA9685
 import os
 import info
 import RPIservo
-
+from BatMon import *
 import functions
 import robotLight
 import switch
@@ -409,7 +409,7 @@ async def recv_msg(websocket):
             'title' : '',
             'data' : None
         }
-
+        screen.screen_show(1, 'Battery:' + str(BatStat()) + '%')   #I found this While loop to run the code, to not make any new threads
         data = ''
         data = await websocket.recv()
         try:
