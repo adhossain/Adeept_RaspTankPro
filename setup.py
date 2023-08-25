@@ -107,6 +107,14 @@ for x in range(1,4):
 	if os.system("sudo git clone https://github.com/oblique/create_ap") == 0:
 		break
 
+for x in range(1,4):
+	if os.system("sudo apt-get install build-essential python-dev python-smbus python-pip") == 0:
+		break
+		
+for x in range(1,4):
+	if os.system("sudo pip3 install adafruit_ads1x15") == 0:
+		break
+
 try:
 	os.system("cd " + thisPath + "/create_ap && sudo make install")
 except:
